@@ -1,13 +1,14 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.less';
 import * as serviceWorker from './serviceWorker';
+import {createApp, createStore} from './app';
+import { createBrowserHistory } from 'history'
+
+const { store, history } = createStore(createBrowserHistory(), {});
+const application = createApp(store, history);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  application,
   document.getElementById('root')
 );
 
